@@ -7,4 +7,5 @@ echo -e "\033[0;34m" && cat /sys/firmware/devicetree/base/model && echo -e "\033
 df -h -x tmpfs -x udev # disk usage, minus def and swap
 echo ""
 
-tmux attach
+# tmux attache is added by setup script only if tmux is enabled
+#tmux attach
