@@ -99,6 +99,8 @@ alias u='cd ..'
 alias ..='cd ..'
 alias ~='cd ~'
 
+alias i='~/.welcome-info.sh'
+
 mkd () { mkdir -p "$1" && cd "$1"; } 
 json() { echo $* | python -mjson.tool; }
 
