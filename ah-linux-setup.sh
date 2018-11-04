@@ -1,6 +1,8 @@
 #!/bin/bash
 
-SP=https://raw.githubusercontent.com/ah01/linux-setup/master/
+SP=https://raw.githubusercontent.com/ah01/linux-setup/master/user/
+
+# -----------------------------------------------------------------------------
 
 function replace-file 
 {
@@ -9,14 +11,29 @@ function replace-file
     wget -q -O $1 $2
 }
 
-# TMux
+# -----------------------------------------------------------------------------
 
-sudo apt-get install tmux
+sudo apt-get install htop
 
 replace-file ~/.bashrc $SP.bashrc
 replace-file ~/.bash_profile $SP.bash_profile
-replace-file ~/.tmux.conf $SP.tmux.conf
 
+# --- tmux ---
 
+read -p "Setup tmux (y/n)? " input
+
+if [[ $input == "y" ]]; then
+
+    # install tmux
+    sudo apt-get install tmux
+    # copy config file
+    replace-file ~/.tmux.conf $SP.tmux.conf
+
+    # run tmux after bash
+    echo "tmux attach" >> ~/.bash_profile
+
+fi
+
+# -----------------------------------------------------------------------------
 
 echo Done.
