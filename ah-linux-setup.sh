@@ -18,6 +18,7 @@ sudo apt-get install htop tree
 
 # profile files
 echo "Replace basic profile files"
+replace-file ~/..welcome-info.sh $SP.welcome-info.sh
 replace-file ~/.bashrc $SP.bashrc
 replace-file ~/.bash_profile $SP.bash_profile
 
