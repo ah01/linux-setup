@@ -22,6 +22,8 @@ replace-file ~/.welcome-info.sh $SP.welcome-info.sh
 replace-file ~/.bashrc $SP.bashrc
 replace-file ~/.bash_profile $SP.bash_profile
 
+chmod +x ~/.welcome-info.sh
+
 # --- ssh key ---
 
 read -p "Add authorized_keys (y/n)? " input
