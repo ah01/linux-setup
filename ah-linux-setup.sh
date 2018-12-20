@@ -11,10 +11,28 @@ function replace-file
     wget -q -O $1 $2
 }
 
+function install-app
+{
+    if hash $1 2>/dev/null; then
+        echo "  application $1 already available"
+    else
+        echo "  installing $1 ($2)"
+        if hash dnf 2>/dev/null; then
+            sudo dnf install $2
+        elif hash apt-get 2>/dev/null; then
+            sudo apt-get install $2
+        else
+            else "  unknown package manager!"
+            exit
+        fi
+    fi
+}
+
 # -----------------------------------------------------------------------------
 
 # applications
-sudo apt-get install htop tree
+install-app htop htop
+install-app tree tree
 
 # profile files
 echo "Replace basic profile files"
@@ -60,7 +78,7 @@ if [[ $input == "y" ]]; then
     echo "Setup tmux"
 
     # install tmux
-    sudo apt-get install tmux
+    install-app tmux tmux
 
     # copy config file
     replace-file ~/.tmux.conf $SP.tmux.conf
