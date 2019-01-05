@@ -1,0 +1,25 @@
+# https://www.if-not-true-then-false.com/2009/tuning-nano-text-editor-with-nanorc/
+
+set smooth
+set autoindent
+set morespace
+
+set tabsize 4
+set tabstospaces
+
+set mouse
+
+set linenumbers
+
+set positionlog
+
+# Remap numpad (only if nessesary, will mess-up mouse support)
+#set rebindkeypad
+
+## Paint the interface elements of nano.
+## These are examples; by default there are no colors.
+set titlecolor brightwhite,blue
+set numbercolor cyan
+set statuscolor brightwhite,green
+set keycolor green
+set functioncolor yellow

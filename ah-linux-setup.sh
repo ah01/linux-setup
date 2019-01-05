@@ -22,17 +22,32 @@ function install-app
         elif hash apt-get 2>/dev/null; then
             sudo apt-get install $2
         else
-            else "  unknown package manager!"
+            echo "  unknown package manager!"
             exit
         fi
+    fi
+}
+
+function install-micro
+{
+    if hash micro 2>/dev/null; then
+        echo "  micro already available"
+    else
+        echo "  download micro"
+        curl https://getmic.ro | bash
+        
+        echo "  copy to path"
+        sudo cp ./micro /usr/bin && rm ./micro
     fi
 }
 
 # -----------------------------------------------------------------------------
 
 # applications
+echo "Install applications"
 install-app htop htop
 install-app tree tree
+install-micro
 
 # profile files
 echo "Replace basic profile files"
