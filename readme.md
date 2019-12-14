@@ -1,5 +1,7 @@
 # My Linux Setup 
 
+My personal favorite linux user configuration
+
 ## How to apply
 
 ```
