@@ -54,6 +54,7 @@ echo "Replace basic profile files"
 replace-file ~/.welcome-info.sh $SP.welcome-info.sh
 replace-file ~/.bashrc $SP.bashrc
 replace-file ~/.bash_profile $SP.bash_profile
+replace-file ~/.bash_aliases $SP.bash_aliases
 
 chmod +x ~/.welcome-info.sh
 
